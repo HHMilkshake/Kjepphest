@@ -5,22 +5,96 @@
 <style>
 body { font-family: Arial; background: #f2f2ff; text-align: center; padding: 30px; }
 h1 { color: #6a3ea1; }
-.card { background: white; padding: 20px; margin: 20px auto; width: 300px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-button { padding: 10px 15px; border: none; border-radius: 10px; background: #6a3ea1; color: white; cursor: pointer; }
+
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #6a3ea1;
+  color: white;
+  cursor: pointer;
+}
+
 button:hover { background: #532d7f; }
+a { text-decoration: none; }
 </style>
 </head>
+
 <body>
-<h1>Velkommen til Kjepphest World 🐴</h1>
+<h1>🐴 Kjepphest World</h1>
 
 <div class="card">
-<p>Her kan du lære om kjepphestar, triks, og konkurransar!</p>
-<button onclick="alert('Du hoppa eit hinder! 🐴💨')">Hopp hinder</button>
+<p>Velkommen! Velg kva du vil gjere:</p>
+
+<a href="info.html"><button>Info</button></a>
+<a href="game.html"><button>Spel</button></a>
 </div>
 
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Info 🐴</title>
+<style>
+body { font-family: Arial; background: #f2f2ff; text-align: center; padding: 30px; }
+.card { background: white; padding: 20px; margin: 20px auto; width: 300px; border-radius: 15px; }
+button { padding: 10px; background: #6a3ea1; color: white; border: none; border-radius: 10px; }
+a { text-decoration: none; }
+</style>
+</head>
+
+<body>
+
+<h1>📘 Info om kjepphest</h1>
+
 <div class="card">
-<p>Tips: Tren 10 min kvar dag for å bli proff 😎</p>
+<p>Kjepphest er ein sport der du hoppar hinder og trenar med ein hobbyhest.</p>
 </div>
+
+<a href="index.html"><button>Tilbake</button></a>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Spel 🐴</title>
+<style>
+body { font-family: Arial; background: #f2f2ff; text-align: center; padding: 30px; }
+.card { background: white; padding: 20px; margin: 20px auto; width: 300px; border-radius: 15px; }
+button { padding: 10px; background: #6a3ea1; color: white; border: none; border-radius: 10px; }
+</style>
+</head>
+
+<body>
+
+<h1>🎮 Hopp hinder spel</h1>
+
+<div class="card">
+<p id="text">Trykk for å hoppe!</p>
+<button onclick="jump()">Hopp 🐴</button>
+</div>
+
+<a href="index.html"><button>Tilbake</button></a>
+
+<script>
+function jump() {
+  let rand = Math.random();
+  if (rand > 0.5) {
+    document.getElementById("text").innerHTML = "Du hoppa hinderet! 🐴💨";
+  } else {
+    document.getElementById("text").innerHTML = "Du datt av 😭 prøv igjen!";
+  }
+}
+</script>
 
 </body>
 </html>
