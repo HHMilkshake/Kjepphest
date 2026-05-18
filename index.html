@@ -43,3 +43,130 @@ a { text-decoration: none; }
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Info 🐴</title>
+<style>
+body { font-family: Arial; background: #f2f2ff; text-align: center; padding: 30px; }
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 15px;
+}
+button {
+  padding: 10px;
+  background: #6a3ea1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+a { text-decoration: none; }
+</style>
+</head>
+
+<body>
+
+<h1>📘 Info</h1>
+
+<div class="card">
+<p>Kjepphest er ein hobby der du hoppar hinder med ein kjepphest 🐴</p>
+<p>Du kan trene, konkurrere og ha det gøy!</p>
+</div>
+
+<a href="index.html"><button>⬅ Tilbake</button></a>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<title>Spel 🐴</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #f2f2ff;
+  text-align: center;
+  padding: 30px;
+}
+
+.track {
+  width: 300px;
+  height: 100px;
+  background: white;
+  margin: 20px auto;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.horse {
+  position: absolute;
+  left: 10px;
+  top: 30px;
+  font-size: 40px;
+  transition: 0.5s;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #6a3ea1;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+}
+button:hover { background: #532d7f; }
+</style>
+
+</head>
+
+<body>
+
+<h1>🎮 Hinderløype</h1>
+
+<div class="track">
+  <div id="horse" class="horse">🐴</div>
+</div>
+
+<p id="text">Trykk for å hoppe!</p>
+
+<button onclick="jump()">Hopp 🐴</button>
+<button onclick="reset()">Restart</button>
+
+<a href="index.html"><button>⬅ Tilbake</button></a>
+
+<script>
+let pos = 10;
+
+function jump() {
+  let rand = Math.random();
+
+  if (rand > 0.4) {
+    pos += 60;
+    document.getElementById("text").innerHTML = "Du hoppa hinderet! 🐴💨";
+  } else {
+    pos -= 20;
+    document.getElementById("text").innerHTML = "Du datt av 😭";
+  }
+
+  if (pos < 10) pos = 10;
+  if (pos > 250) {
+    document.getElementById("text").innerHTML = "DU VANN! 🏆🐴";
+  }
+
+  document.getElementById("horse").style.left = pos + "px";
+}
+
+function reset() {
+  pos = 10;
+  document.getElementById("horse").style.left = "10px";
+  document.getElementById("text").innerHTML = "Trykk for å hoppe!";
+}
+</script>
+
+</body>
+</html>
